@@ -1,16 +1,20 @@
-import React from 'react';
-import 'antd/dist/antd.css';
+ import React from 'react';
+import { Switch, Route, BrowserRouter, Redirect } from 'react-router-dom';
 import './App.scss';
-import { Button } from 'antd';
+import Home from './pages/Home';
+import ProfileRegistration from './pages/ProfileRegistration';
+import Profile from './pages/Profile';
 
-function App() {
+const App: React.FC = () => {
   return (
-  <>
-    <h1>Smart blood</h1>
-    <Button>Button</Button>
-    <input className='input'/>
-  </>
+    <BrowserRouter>
+        <Switch>
+          <Route exact path='/' component={Profile} />
+          <Route path='/profile' component={ProfileRegistration} />
+          <Redirect to="/" />
+        </Switch>
+    </BrowserRouter>
   );
-}
+};
 
 export default App;
