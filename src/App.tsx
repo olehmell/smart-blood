@@ -9,7 +9,7 @@ const App: React.FC = () => {
   return (
     <BrowserRouter>
         <Switch>
-          <Route exact path='/' component={Profile} />
+          <Route exact path='/' component={Home} />
           <Route path='/profile' component={ProfileRegistration} />
           <Redirect to="/" />
         </Switch>

@@ -10,7 +10,7 @@ export default function Home() {
 <path d="M13 32.625C7.82505 32.625 3.55005 28.425 3.55005 23.175C3.55005 22.575 4.07507 22.05 4.67505 22.05C5.27503 22.05 5.80005 22.575 5.80005 23.175C5.80005 27.15 9.02507 30.375 13 30.375C13.6 30.375 14.125 30.9 14.125 31.5C14.125 32.1 13.6 32.625 13 32.625Z" fill="white"/>
 </svg>
 
-      </div>
+    </div>
       <div className="nav">
         <Menu className="nav-menu" mode="horizontal">
           <Menu.Item key="mail">
@@ -25,6 +25,16 @@ export default function Home() {
         </Menu>
       </div>
     </div>
+    <div className="content">
+      <div className="wrapper">
+      <div>
+        <p>Стань частиною донорського руху.</p>
+        <Button className="button-border">Стати донором</Button>
+        <Button>Увійти в кабінет</Button>
+      </div>
+      <div className="picture"></div>
+    </div>
+      </div>
     </>
   );
 }

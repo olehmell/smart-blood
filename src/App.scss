@@ -1,50 +1,34 @@
 @import url('https://fonts.googleapis.com/css?family=Rubik:500&display=swap&subset=cyrillic');
+@import '~antd/dist/antd.css';
 
 *{
-  background: #BEBEBE;
   font-family: 'Rubik', ;
   font-style: normal;
   font-size: 14px;;
   margin: 0;
   padding: 0;
-}
-
-.neu-button{
-  transform: translate(50%,50%);
-  border: none;
-  color: #4A6080;
-  padding: 0 1rem 0 1rem;
-  line-height: 2rem;
-  background: #E0E5EC;
-  box-shadow: 9px 9px 16px rgba(163, 177, 198, 0.5), -9px -9px 16px rgba(255, 255, 255, 0.5);
-  border-radius: 4px;
-}
-
-.neu-button:hover{
-  box-shadow: inset 1px 1px 4px rgba(163, 177, 198, 0.5), inset -1px -1px 4px rgba(255, 255, 255, 0.5), 9px 9px 16px rgba(163, 177, 198, 0.5), -9px -9px 16px rgba(255, 255, 255, 0.5);
+  color: #353535;
 }
 
 .header{
   padding: 1% 10% 1% 12%;
   vertical-align: middle;
   display: flex;
+  border-bottom: 1px solid #333333;;
 }
 
 .nav{
-  margin-left: .7em;
+  margin-left: 3em;
   padding-top: .7em;
 }
 
 .nav-menu{
   display: flex;
   li{
-    display: table-cell;
-    vertical-align: middle;
-    margin-left: 4em;
+    padding: 0 2em 0 2em;
     list-style: none;
-    box-sizing: content-box;
     text-align: center;
-    line-height: 1.5rem;
+    line-height: 1.7rem;
   }
 }
 
@@ -52,14 +36,52 @@
   display: inline-block;
 }
 
-.nav, .logo, .header, svg, li{
-  background: #DEE8F1;
+.ant-menu-horizontal > .ant-menu-item:hover, .ant-menu-horizontal > .ant-menu-item-active, .ant-menu-horizontal > .ant-menu-submenu .ant-menu-submenu-title:hover,.ant-menu-item > .ant-menu-item-selected {
+  color: #353535 !important;
+  border-bottom: none !important;
+  text-decoration: underline;
 }
 
-#components-layout-demo-fixed .logo {
-  width: 120px;
-  height: 31px;
-  background: rgba(255, 255, 255, 0.2);
-  margin: 16px 24px 16px 0;
-  float: left;
+
+.ant-menu-horizontal > .ant-menu-item:hover, .ant-menu-horizontal > .ant-menu-submenu:hover, .ant-menu-horizontal > .ant-menu-item-active, .ant-menu-horizontal > .ant-menu-submenu-active, .ant-menu-horizontal > .ant-menu-item-open, .ant-menu-horizontal > .ant-menu-submenu-open, .ant-menu-horizontal > .ant-menu-item-selected, .ant-menu-horizontal > .ant-menu-submenu-selected {
+  color: #353535 !important;
+  border-bottom: none !important;
+}
+
+::selection{
+  color:none;
+  background: none;
+}
+
+.ant-menu-item, .ant-menu-submenu-title{
+  transition: none !important;
+  -webkit-transition: none !important;
+}
+
+.content{
+  display: flex;
+  div{
+    transform: translate(8%, 15%);
+  }
+  p{
+    padding-top: 15%;
+    font-size: 48px;
+    width: 500px;
+  }
+  button{
+    margin-right: 2em;
+  }
+  .button-border{
+    border: 1px solid #333333;
+  }
+  .picture{
+    height: 346px;
+    width: 566px;
+    background: url('OBJECTS.jpg');
+  }
+}
+
+.wrapper{
+  width: 100%;
+  display: flex;
 }
