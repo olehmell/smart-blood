@@ -1,7 +1,14 @@
 import React from 'react';
 import { Button, Form, Input, Row, Col } from 'antd';
+import { createUser } from '../components/api';
+import { useSidebarProfile } from '../components/ProfileContext';
+import { Donor } from '../../server/src/types';
+import { useHistory } from 'react-router-dom';
 
 export default () => {
+  const history = useHistory();
+  const { set } = useSidebarProfile();
+  
   return(
     <main className="registration">
       <Form layout="inline">
@@ -32,7 +39,11 @@ export default () => {
         </Row>
         <Col span={2}>
         <Form.Item>
-          <Button htmlType="submit" className="login-form-button">
+          <Button htmlType="button" className="login-form-button"
+            onClick = {(data: any) => {
+            history.push('/profile');
+          }}
+          >
             Зареєструватися
           </Button>
         </Form.Item>

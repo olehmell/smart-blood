@@ -1,7 +1,14 @@
-import React from 'react';
-import { Form, Icon, Input, Button, Checkbox } from 'antd';
+import React, { useState } from 'react';
+import { Form, Input, Button } from 'antd';
+import { useSidebarProfile } from '../components/ProfileContext';
+import { isUserPasswordValid } from '../components/api';
+import { Donor } from '../../server/src/types';
+import { useHistory } from 'react-router-dom';
 
 export default function Authorization() {
+  const history = useHistory();
+  const { set } = useSidebarProfile();
+  const [ error, setError ] = useState();
   return(
     <>
     <main className="authorization">
@@ -15,9 +22,14 @@ export default function Authorization() {
           />
         </Form.Item>
         <Form.Item>
-          <Button htmlType="submit" className="login-form-button">
+          <Button htmlType="submit" className="login-form-button"
+          onClick = {async (data: any) => {
+            history.push('/profile');
+          }}
+          >
             Увійти
           </Button>
+          {error}
         </Form.Item>
       </Form>
     </main>

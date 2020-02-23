@@ -2,6 +2,18 @@ import React, { useReducer, createContext, useContext, useEffect } from 'react';
 import store from 'store';
 import { Donor } from '../../server/src/types';
 
+export enum BloodType {
+    Ominus,
+    Oplus,
+    Aminus,
+    Aplus,
+    Bminus,
+    Bplus,
+    ABminus,
+    ABplus
+  }
+  
+
 export const SIDEBAR_COLLAPSED = 'df.colapsed';
 
 type SidebarProfileState = {
@@ -40,9 +52,15 @@ function functionStub () {
   throw new Error('Function needs to be set in SidebarProfileProvider');
 }
 
-const initialState = {
+const initialState: any = {
   inited: false,
-  profile: undefined,
+  profile: {
+    profile: {
+        fullName: 'Мельничук Олег Валерійович',
+        email: 'oleh.melnechyk@gmail.com',
+        phoneNumber: '+380978974820',
+        bloodType: BloodType.ABminus
+    }},
   trigerFollowed: false
 };
 
@@ -86,3 +104,13 @@ export function useSidebarProfile () {
 }
 
 export default SidebarProfileProvider;
+
+export const useGetMyProfile = () => {
+    return {
+        profile: {
+            fullName: 'Мельничук Олег Валерійович',
+            email: 'oleh.melnechyk@gmail.com',
+            phoneNumber: '+380978974820',
+            bloodType: BloodType.ABminus
+    } as unknown as Donor};
+}  
