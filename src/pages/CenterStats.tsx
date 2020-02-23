@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Button, Menu, Icon, Avatar, Calendar, Tabs, Table, Select, AutoComplete } from 'antd';
 import { columnCenterTable, listCenterData } from '../data';
+import { Link } from 'react-router-dom';
 
 export default () => {
   return (
@@ -46,7 +47,7 @@ export default () => {
           <p>1 негативна</p>
           <p>Необхідно: 5л</p>
         </div>
-        <Button>Здати тут</Button>
+        <Link to="/donation"><Button>Здати тут</Button></Link>
       </div>
     </div>
       <div className='bloodTable' >

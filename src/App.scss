@@ -61,7 +61,7 @@ header{
 }
 
 .ant-menu-horizontal{
-  border-bottom: none;
+  border-bottom: none !important;
 }
 
 .ant-menu-item, .ant-menu-submenu-title{
@@ -237,7 +237,7 @@ header{
 
 .recepientPage {
   display: block;
-  margin-top: 18rem;
+  margin-top: 1rem;
 }
 
 

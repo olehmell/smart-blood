@@ -1,5 +1,5 @@
 import React, { FunctionComponent, useState, useEffect } from 'react';
-import { Menu, Button, Avatar } from 'antd';
+import { Menu, Button, Avatar, List } from 'antd';
 import { Link } from 'react-router-dom';
 import { useHistory } from "react-router-dom";
 
@@ -19,7 +19,7 @@ const Header: FunctionComponent = ({ children }) => {
     return(
       <>
         <div style={{float:"right"}}>
-          <Link to="/">
+          <Link to="/donation">
             <Button>Запланувати кроводачу</Button>
           </Link>
           <Link to="/profile">
@@ -38,13 +38,13 @@ const Header: FunctionComponent = ({ children }) => {
       <div className="nav">
         <Menu className="nav-menu" mode="horizontal">
           <Menu.Item key="mail">
-            Моніторинг банку крові
+            <Link to="/centerstats">Моніторинг банку крові</Link>
           </Menu.Item>
           <Menu.Item key="mail1">
-            Точки здачі крові
+            <Link to="/points">Точки здачі крові</Link>
           </Menu.Item>
           <Menu.Item key="mail2">
-            Реципієнти
+            <Link to="/retipientlist">Реципієнти</Link>
           </Menu.Item>
         </Menu>
       </div>

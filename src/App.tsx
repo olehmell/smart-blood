@@ -9,10 +9,7 @@ import RetipientsList from './pages/RetipientsList';
 import Authorization from './pages/Authorization';
 import ProfileRegistration from './pages/ProfileRegistration';
 import SidebarProfileProvider from './components/ProfileContext';
-
-import Authorization from './pages/Authorization';
 import Header from './components/Header';
-import ProfileRegistration from './pages/ProfileRegistration';
 import CenterStats from './pages/CenterStats';
 
 const App: React.FC = () => {
@@ -27,6 +24,7 @@ const App: React.FC = () => {
               <Route path='/retipientlist' component={RetipientsList} />
               <Route path='/points' component={Points} />
               <Route path='/login' component={Authorization} />
+              <Route path='/centerstats' component={CenterStats} />
               <Route path='/registration' component={ProfileRegistration} />
               <Redirect to="/" />
             </Switch>
