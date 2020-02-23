@@ -27,8 +27,9 @@ export type Donation = {
   donorId: number,
   centerId: number,
   recipientId: number,
-  donatedBloodType: BloodType,
+  bloodType: BloodType,
   date: Date,
+  finished: boolean
 };
 
 export type BloodCenter = {
@@ -50,4 +51,5 @@ export type Recepient = {
   disease: string,
   diseaseDesc: string,
   bloodType: BloodType,
+  donationsNeeded: number,
 };
