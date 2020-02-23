@@ -1,37 +1,46 @@
 -- Create custom types
-DO $$
-BEGIN
-    IF NOT EXISTS (SELECT 1 FROM pg_type WHERE typname = 'blood_type') THEN
-        CREATE TYPE blood_type AS ENUM (
-            'I-',
-            'I+',
-            'II-',
-            'II+',
-            'III-',
-            'III+',
-            'IV-',
-            'IV+'
-        );
-    END IF;
-END$$;
-
 CREATE TABLE IF NOT EXISTS donor
 (
-    id bigserial not null primary key,
+    id bigserial NOT NULL PRIMARY KEY,
+    password text NOT NULL,
     fullname varchar(100) NOT NULL,
-    email varchar(100) NOT NULL,
-    phone_number varchar(13) NOT NULL,
-    blood_type blood_type NULL,
-    birth_date TIMESTAMP NULL DEFAULT NOW()
-    
+    birth_date date NULL,
+    phone_number varchar(13) NOT NULL UNIQUE,
+    email varchar(320) NOT NULL UNIQUE,
+    blood_type smallint NULL
 );
 
 CREATE TABLE IF NOT EXISTS donation
 (
-    id bigserial not null primary key,
-    donorId bigint not null,
-    centerId bigint not null,
-    recipientId bigint not null,
-    blood_type blood_type NOT NULL,
-    birth_date TIMESTAMP NOT NULL DEFAULT NOW(),
+    id bigserial NOT NULL PRIMARY KEY,
+    donor_id bigint NOT NULL,
+    center_id bigint NOT NULL,
+    recipient_id bigint NOT NULL,
+    blood_type smallint NOT NULL,
+    donate_date TIMESTAMP NOT NULL DEFAULT NOW()
+);
+
+CREATE TABLE IF NOT EXISTS blood_center
+(
+    id bigserial NOT NULL PRIMARY KEY,
+    name varchar(100) NOT NULL,
+    address varchar(100) NOT NULL,
+    blood_bank_id bigint NOT NULL
+);
+
+CREATE TABLE IF NOT EXISTS blood_bank
+(
+    id bigserial NOT NULL PRIMARY KEY,
+    bank_info json NOT NULL
+);
+
+CREATE TABLE IF NOT EXISTS recepient
+(
+    id bigserial NOT NULL PRIMARY KEY,
+    center_id bigint NOT NULL,
+    age bigint NOT NULL,
+    blood_type smallint NOT NULL,
+    disease varchar(64) NOT NULL,
+    disease_desc varchar(256) NOT NULL,
+    donate_date TIMESTAMP NOT NULL DEFAULT NOW()
 );
