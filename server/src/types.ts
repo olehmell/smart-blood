@@ -1,4 +1,4 @@
-enum BloodType {
+export enum BloodType {
   Ominus,
   Oplus,
   Aminus,
@@ -10,12 +10,12 @@ enum BloodType {
 }
 
 export type Donor = {
-  id: number,
+  id?: number,
   fullName: string,
-  birthDate: Date,
+  birthDate?: Date,
   phoneNumber: string,
   email: string,
-  bloodType: BloodType
+  bloodType?: BloodType
 };
 
 export type DonorReg = Donor & {

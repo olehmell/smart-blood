@@ -39,11 +39,8 @@ export default () => {
         </Row>
         <Col span={2}>
         <Form.Item>
-          <Button htmlType="submit" className="login-form-button"
-            onClick = {async (data: any) => {
-            const profile = await createUser(data);
-            console.log(profile);
-            set(profile as unknown as Donor);
+          <Button htmlType="button" className="login-form-button"
+            onClick = {(data: any) => {
             history.push('/profile');
           }}
           >

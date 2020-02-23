@@ -2,10 +2,10 @@ import React, { useState } from 'react';
 import { Button, Menu, Icon, Avatar, Calendar, Tabs, Table } from 'antd';
 import { Link } from 'react-router-dom';
 import { columnBloodTable, listData } from '../data';
-import { useSidebarProfile } from '../components/ProfileContext';
+import { useGetMyProfile } from '../components/ProfileContext';
 
 export default () => {
-  const { state: { profile } } = useSidebarProfile();
+  const { profile } = useGetMyProfile();
   const [ filter, setFilter ] = useState(false);
 
   if (!profile) return <Link to='/'>Твого профайлу ще немає, будь ласка зареєструйся</Link>

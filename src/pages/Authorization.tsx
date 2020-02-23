@@ -24,9 +24,6 @@ export default function Authorization() {
         <Form.Item>
           <Button htmlType="submit" className="login-form-button"
           onClick = {async (data: any) => {
-            const profile = await isUserPasswordValid(data.email, data.password);
-            console.log(profile);
-            set(profile as unknown as Donor);
             history.push('/profile');
           }}
           >
