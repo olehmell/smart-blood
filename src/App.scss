@@ -235,3 +235,43 @@ header{
   display: block;
   margin-top: 18rem;
 }
+
+
+.retipientPage{
+  .col-1,.col-2{
+    display: flex;
+    flex-direction: column;
+
+  }
+
+  .userContent{
+    width: 100%;
+  }
+
+  .row{
+    display: flex;
+  }
+  
+  div{
+    margin: .5em .5em .5em .5em;
+  }
+
+  .userInfo{
+    margin: 0 0 0 1em;
+  }
+}
+
+.centerStats{
+
+  border: 1px solid #ddd;
+
+  .hospital-card{
+    display: flex;
+  }
+
+  .col{
+    display: flex;
+    flex-direction: column;
+    margin: 3em .2em 3em .2em;
+  }
+}

@@ -1,5 +1,5 @@
 import React, { FunctionComponent, useState, useEffect } from 'react';
-import { Menu, Button } from 'antd';
+import { Menu, Button, Avatar } from 'antd';
 import { Link } from 'react-router-dom';
 import { useHistory } from "react-router-dom";
 
@@ -17,9 +17,16 @@ const Header: FunctionComponent = ({ children }) => {
 
   function renderDonateButton(){
     return(
-      <Link to="/">
-        <Button style={{float:"right", }}>Запланувати кроводачу</Button>
-      </Link>
+      <>
+        <div style={{float:"right"}}>
+          <Link to="/">
+            <Button>Запланувати кроводачу</Button>
+          </Link>
+          <Link to="/profile">
+            <Avatar style={{marginLeft:".7em"}} shape="circle" size={40} icon="user" />
+          </Link>
+        </div>
+      </>
     );
   }
 
