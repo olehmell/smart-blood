@@ -1,26 +1,29 @@
 import { NextFunction, Request, Response, Router } from 'express'
-
+import { isUserPasswordValid, createUser } from 'sql/postgres';
+import { DonorReg } from 'types';
 
 const router = Router()
 
 // USER
-router.get('/login', ( req, res ) => {
+router.post('/login/donor', async ( req, response ) => {
   const data = req.body;
 
   try {
-    //checkUser
+    const result = await isUserPasswordValid(data.email, data.password);
+    response.json(result);
   } catch (error) {
-    res.json(error);
+    response.json(error);
   }
 })
 
-router.post('/create/user', ( req, res ) => {
+router.post('/create/user', async ( req, response ) => {
   const data = req.body;
 
   try {
-    //createUser
+    const result = await createUser(data as DonorReg);
+    response.json(result);
   } catch (error) {
-    res.json(error);
+    response.json(error);
   }
 })
 

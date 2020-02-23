@@ -2,34 +2,30 @@ import { pool } from '../adaptors/connectPosgre'
 import { DonorReg } from '../types'
 
 export const createUser = async (data: DonorReg) => {
-  const { fullName, email, phoneNumber, bloodType, birthDate, password } = data;
-  const params = [ fullName, email, phoneNumber, bloodType, birthDate, password ]
+  const { fullName, email, phoneNumber, password } = data;
+  const params = [ password, fullName, phoneNumber, email ];
 
   const query = `
-  INSERT INTO donor(fullName, email, phoneNumber, bloodType, birthDate, password)
-    VALUES($1, $2, $3, $4, $5, $6)
-  RETURNING *`
+  INSERT INTO donor(password, fullname, phone_number, email)
+    VALUES(md5($1), $2, $3, $4)`
   try {
-    const res = await pool.query(query, params)
-    console.log(res.rows[0].count)
-    return res.rows[0].count as number
+    const res = await pool.query(query, params);
+    return res.rowCount;
   } catch (err) {
-    console.log(err.stack)
-    return 0
+    return err;
   }
 }
 
-export const checkUser = async (email: string, password: string) => {
-  const query = `
-    SELECT 1
-    FROM donor
-      WHERE email = $2 AND password = $1
-    RETURNING *`
+export const isUserPasswordValid = async (email: string, password: string) => {
+  if (!email || !password)
+    throw new Error('Wrong data requested');
+
+  const query = `SELECT * FROM donor WHERE email = $1 AND password = md5($2) LIMIT 1`
   const params = [email, password]
   try {
-    const res = await pool.query(query, params)
-    console.log(res.rows[0])
+    const res = await pool.query(query, params);
+    return res.rows[0];
   } catch (err) {
-    console.log(err.stack)
+    return err;
   }
 }
