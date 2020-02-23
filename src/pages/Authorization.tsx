@@ -1,10 +1,26 @@
 import React from 'react';
-import { Button, Menu, Icon } from 'antd';
+import { Form, Icon, Input, Button, Checkbox } from 'antd';
 
-export default function Profile() {
+export default function Authorization() {
   return(
     <>
-    
+    <Form>
+        <Form.Item>
+          <Input
+          />
+        </Form.Item>
+        <Form.Item>
+          <Input
+            type="password"
+          />
+        </Form.Item>
+        <Form.Item>
+          <Button type="primary" htmlType="submit" className="login-form-button">
+            Увійти
+          </Button>
+        </Form.Item>
+      </Form>
+
     </>
   );
 }
