@@ -10,16 +10,23 @@
   color: #353535;
 }
 
-.header{
-  padding: 1% 10% 1% 12%;
-  vertical-align: middle;
+header{
+  padding: 2% 10% 2% 12%;
   display: flex;
-  border-bottom: 1px solid #333333;;
+  border-bottom: 1px solid #333333;
+  .picture{
+    background: url('water 1.jpg');
+    width: 31px;
+    height: 37px;
+  }
+}
+
+.ant-menu-horizontal .ant-menu-item, .ant-menu-horizontal .ant-menu-submenu {
+  margin-top: -2em !important;
 }
 
 .nav{
   margin-left: 3em;
-  padding-top: .7em;
 }
 
 .nav-menu{
@@ -28,7 +35,7 @@
     padding: 0 2em 0 2em;
     list-style: none;
     text-align: center;
-    line-height: 1.7rem;
+    line-height: 1.5rem;
   }
 }
 
@@ -70,6 +77,7 @@
   }
   button{
     margin-right: 2em;
+    border: none;
   }
   .button-border{
     border: 1px solid #333333;
@@ -82,12 +90,78 @@
 }
 
 .wrapper{
-  width: 100%;
   display: flex;
 }
 
-.ant-menu-horizontal {
-  border-bottom: none !important;
+.authorization{
+  .ant-input{
+    width:100% !important;
+  }
+  
+  .ant-menu-horizontal {
+    border-bottom: none !important;
+  }
+  
+  .ant-form{
+    max-width: 20em;
+    margin: 10% 0 0 37% !important;
+  }
+  
+  .ant-btn{
+    width: 10em;
+    margin-top: 1.5em;
+  }
+  
+  .ant-form-item{
+    margin-bottom:1em;
+  }
+}
+
+.ant-btn, .ant-input{
+  border: .5px solid #333333 !important;
+} 
+
+.registration{
+  .ant-form-inline .ant-form-item > .ant-form-item-control-wrapper, 
+  .ant-form-inline .ant-form-item > .ant-form-item-label{
+    display: block !important;
+  }
+
+  .ant-col.ant-col-1{
+    .ant-input{
+      width: 40em !important;
+    }
+
+    .ant-col.ant-form-item-label{
+      margin-left: 32%;
+    }
+  }
+
+  .ant-input{
+    width: 19.4em;
+  }
+
+  .ant-form{
+    max-width: 50em;
+    margin: 10% 0 0 23% !important;
+  }
+
+  .ant-form-item{
+    margin-bottom:1em !important;
+  }
+
+  .ant-btn{
+    width: 14em;
+    margin-top: 1.5em;
+  }
+
+  .ant-col.ant-col-2{
+    margin-left: 24%;
+  }
+
+  .ant-col.ant-form-item-label{
+    float: left;
+  }
 }
 
 .userProfile {
@@ -160,4 +234,44 @@
 .recepientPage {
   display: block;
   margin-top: 18rem;
+}
+
+
+.retipientPage{
+  .col-1,.col-2{
+    display: flex;
+    flex-direction: column;
+
+  }
+
+  .userContent{
+    width: 100%;
+  }
+
+  .row{
+    display: flex;
+  }
+  
+  div{
+    margin: .5em .5em .5em .5em;
+  }
+
+  .userInfo{
+    margin: 0 0 0 1em;
+  }
+}
+
+.centerStats{
+
+  border: 1px solid #ddd;
+
+  .hospital-card{
+    display: flex;
+  }
+
+  .col{
+    display: flex;
+    flex-direction: column;
+    margin: 3em .2em 3em .2em;
+  }
 }
