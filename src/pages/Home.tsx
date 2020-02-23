@@ -9,8 +9,8 @@ export default function Home() {
         <div className="wrapper">
           <div>
             <p>Стань частиною донорського руху.</p>
-            <Link to="/registration"><Button className="button-border">Стати донором</Button></Link>
-            <Link to="/authorization"><Button>Увійти в кабінет</Button></Link>
+            <Button className="button-border"><Link to='/registration'>Стати донором</Link></Button>
+            <Button><Link to='/login'>Увійти в кабінет</Link></Button>
           </div>
           <div className="picture"></div>
         </div>
