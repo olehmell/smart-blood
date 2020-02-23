@@ -1,9 +1,10 @@
 import React from 'react';
-import { Button, Menu, Icon } from 'antd';
+import { Button, Menu, Icon, Avatar } from 'antd';
 
-export default function Profile() {
+export default () => {
   return(
-    <>
-    </>
+    <main className='userProfile'>
+      <Avatar shape="square" size={144} icon="user" />
+    </main>
   );
 }
