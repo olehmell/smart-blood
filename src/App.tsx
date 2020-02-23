@@ -2,7 +2,9 @@
 import { Switch, Route, BrowserRouter, Redirect } from 'react-router-dom';
 import './App.scss';
 import Home from './pages/Home';
-import Profile from './pages/ProfileRegistration';
+import Profile from './pages/Profile';
+import Donation from './pages/Donation';
+
 import Header from './components/Header';
 
 const App: React.FC = () => {
@@ -12,6 +14,7 @@ const App: React.FC = () => {
           <Switch>
             <Route exact path='/' component={Home} />
             <Route path='/profile' component={Profile} />
+            <Route path='/donation' component={Donation} />
             <Redirect to="/" />
           </Switch>
       </Header>

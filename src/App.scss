@@ -89,3 +89,67 @@
 .ant-menu-horizontal {
   border-bottom: none !important;
 }
+
+.userProfile {
+  display: flex;
+  justify-content: center;
+  margin-top: 4rem;
+  margin-bottom: 2rem;
+
+  .ant-avatar-icon {
+    i {
+      svg {
+        font-size: 125px;
+      }
+    }
+  }
+}
+
+.userInfo {
+  width: 40%;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  margin: 0 2rem;
+  padding: 1.5rem;
+  display: flex;
+  justify-content: space-between;
+}
+
+.bloodTable {
+  margin: 0 18rem;
+
+  button {
+    margin-right: 2rem;
+  }
+  .ant-table-body {
+    a {
+      color: #000;
+    }
+    font-weight: 350 !important;
+  }
+
+
+
+  .ant-btn:active, .ant-btn:hover, .ant-btn:visited {
+    background-color: #333333;
+    span {
+      color: #fff;
+    }
+  }
+}
+
+.navButtons {
+  margin: 1.5rem 0;
+}
+
+.donationPage {
+  height: 90%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  .selects {
+    line-height: 6rem;
+    text-align: center;
+    width: 55%;
+  }
+}
