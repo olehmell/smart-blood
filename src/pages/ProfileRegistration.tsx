@@ -1,10 +1,15 @@
-import React from 'react';
-import { Button, Menu, Icon, Avatar } from 'antd';
+import React, { useState } from 'react';
+import { Button, Menu, Icon, Avatar, Calendar, Tabs, Table } from 'antd';
+import { Link } from 'react-router-dom';
+import { columnBloodTable, listData } from '../data';
 
 export default () => {
+  const [ filter, setFilter ] = useState(false);
+
   return (
-    <main className='userProfile'>
-      <Avatar shape="square" size={144} icon="user" />
+  <>
+    <div className='userProfile'>
+      <Avatar shape="square" size={300} icon="user" />
       <div className='userInfo'>
         <div className='userContent'>
           <div className='fullName'>Мельничук Олег Валерійович</div>
@@ -16,6 +21,18 @@ export default () => {
         </div>
         <Icon type='edit'/>
       </div>
-    </main>
+      <div className='calendar' style={{ width: 300, border: '1px solid #d9d9d9', borderRadius: 4 }}>
+        <Calendar fullscreen={false} />
+      </div>
+    </div>
+    <div className='bloodTable'>
+      <div>Список кроводач</div>
+      <div className='navButtons'>
+        <Button onClick={() => setFilter(false)}>Заплановані кроводачі</Button>
+        <Button onClick={() => setFilter(true)}>Попередні кроводачі</Button>
+      </div>
+      <Table columns={columnBloodTable} dataSource={listData.filter(x => x.done === filter)} scroll={{ y: 240 }} pagination={false}/>
+    </div>
+  </>
   )
 }
