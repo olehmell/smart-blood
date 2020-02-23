@@ -5,6 +5,7 @@ import { columnCenterTable, listCenterData } from '../data';
 export default () => {
   return (
     <main className='centerStats'>
+      <p className="hospital-name">Повна назва закладу</p>
       <div className="hospital-card">
         <div className="col">
           <div>
@@ -37,18 +38,19 @@ export default () => {
           </div>
         </div>
         <div className="col">
-          <div>
-            <p>1 негативна</p>
-            <p>Необхідно: 5л</p>
-          </div>
-          <div>
-            <p>1 негативна</p>
-            <p>Необхідно: 5л</p>
-          </div>
+        <div>
+          <p>1 негативна</p>
+          <p>Необхідно: 5л</p>
         </div>
+        <div>
+          <p>1 негативна</p>
+          <p>Необхідно: 5л</p>
+        </div>
+        <Button>Здати тут</Button>
       </div>
+    </div>
       <div className='bloodTable' >
-        <div>Список кроводач</div>
+        <div style={{marginBottom: "1em"}}>Список реципієнтів</div>
         <Table columns={columnCenterTable} dataSource={listCenterData} scroll={{ y: 300 }} pagination={false}/>
       </div>
     </main>

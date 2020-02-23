@@ -60,6 +60,10 @@ header{
   background: none;
 }
 
+.ant-menu-horizontal{
+  border-bottom: none;
+}
+
 .ant-menu-item, .ant-menu-submenu-title{
   transition: none !important;
   -webkit-transition: none !important;
@@ -263,15 +267,29 @@ header{
 
 .centerStats{
 
-  border: 1px solid #ddd;
+  .hospital-name{
+    margin: 1% 0 1% 45%;
+  }
 
   .hospital-card{
     display: flex;
+    border: 1px solid #ddd;
+    width: 50%;
+    margin: 1em 0 3em 25em;
+    padding: .4em;
   }
 
   .col{
     display: flex;
     flex-direction: column;
-    margin: 3em .2em 3em .2em;
+    margin: 3em 1em 3em 3em;
+      div{
+        margin-bottom: 2em;
+      }
+  }
+
+  .ant-btn{
+    width: 14em;
+    margin-left: -20em;
   }
 }
