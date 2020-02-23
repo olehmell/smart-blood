@@ -202,6 +202,9 @@ header{
     font-weight: 350 !important;
   }
 
+  .points {
+    margin: 5rem 0;
+  }
 
 
   .ant-btn:active, .ant-btn:hover, .ant-btn:visited {
@@ -226,4 +229,9 @@ header{
     text-align: center;
     width: 55%;
   }
+}
+
+.recepientPage {
+  display: block;
+  margin-top: 18rem;
 }
