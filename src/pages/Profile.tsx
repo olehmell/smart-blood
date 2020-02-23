@@ -2,9 +2,21 @@ import React, { useState } from 'react';
 import { Button, Menu, Icon, Avatar, Calendar, Tabs, Table } from 'antd';
 import { Link } from 'react-router-dom';
 import { columnBloodTable, listData } from '../data';
+import { useSidebarProfile } from '../components/ProfileContext';
 
 export default () => {
+  const { state: { profile } } = useSidebarProfile();
   const [ filter, setFilter ] = useState(false);
+
+  if (!profile) return <Link to='/'>Твого профайлу ще немає, будь ласка зареєструйся</Link>
+
+  const {
+    fullName,
+    phoneNumber,
+    email,
+    birthDate,
+    bloodType,
+  } = profile;
 
   return (
   <>
@@ -12,12 +24,11 @@ export default () => {
       <Avatar shape="square" size={300} icon="user" />
       <div className='userInfo'>
         <div className='userContent'>
-          <div className='fullName'>Мельничук Олег Валерійович</div>
-          <div className='phoneNumber'>+380978974820</div>
-          <div className='email'>oleh.melnechyk@gmail.com</div>
-          <div className='birtData'>23.12.12222</div>
-          <div className='bloodType'>Група крові: 1</div>
-          <div className='resusFactor'>Резус фактор: позитивний</div>
+          <div className='fullName'>{fullName}</div>
+          <div className='phoneNumber'>{phoneNumber}</div>
+          <div className='email'>{email}</div>
+          <div className='birtData'>{birthDate}</div>
+          <div className='bloodType'>{bloodType}</div>
         </div>
         <Icon type='edit'/>
       </div>

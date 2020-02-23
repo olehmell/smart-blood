@@ -6,10 +6,7 @@ import Profile from './pages/Profile';
 import Points from './pages/Points';
 import Donation from './pages/Donation';
 import RetipientsList from './pages/RetipientsList';
-import Authorization from './pages/Authorization';
-import ProfileRegistration from './pages/ProfileRegistration';
 import SidebarProfileProvider from './components/ProfileContext';
-
 import Authorization from './pages/Authorization';
 import Header from './components/Header';
 import ProfileRegistration from './pages/ProfileRegistration';
@@ -28,6 +25,7 @@ const App: React.FC = () => {
               <Route path='/points' component={Points} />
               <Route path='/login' component={Authorization} />
               <Route path='/registration' component={ProfileRegistration} />
+              <Route path='/stats' component={CenterStats} />
               <Redirect to="/" />
             </Switch>
         </Header>
