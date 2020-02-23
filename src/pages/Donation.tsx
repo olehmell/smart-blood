@@ -31,7 +31,7 @@ export default () => {
       >
         {data.map((x, i) => <Option value={i}>{x}</Option>)}
       </Select>
-      <Button><Link to='/'>Відправити заявку</Link></Button>
+      <Button><Link to='/profile'>Відправити заявку</Link></Button>
     </div>
   </main>
   )
